@@ -1,4 +1,4 @@
-// Forçando rebuild com App.jsx limpo e sem imports quebrados
+// Forçar novo build para Vercel (corrigido)
 
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
