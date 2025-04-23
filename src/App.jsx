@@ -1,9 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 
 export default function App() {
   const [avaliacoes, setAvaliacoes] = useState([]);
   const cores = ["#8884d8", "#82ca9d", "#ffc658", "#ff7f50", "#8dd1e1"];
+
+  useEffect(() => {
+    setAvaliacoes([
+      {
+        nome: "João Silva",
+        modelo: "iPhone 11",
+        data: "23/04/2025",
+        defeitos: {
+          "Tela Quebrada": true,
+          "Bateria com Defeito": true,
+        },
+        fotos: {
+          tela: "https://via.placeholder.com/100",
+          carcaça: "https://via.placeholder.com/100"
+        }
+      },
+      {
+        nome: "Maria Oliveira",
+        modelo: "iPhone XR",
+        data: "22/04/2025",
+        defeitos: {
+          "Carcaça Riscada": true
+        },
+        fotos: {
+          carcaça: "https://via.placeholder.com/100"
+        }
+      }
+    ]);
+  }, []);
 
   const contarDefeitos = () => {
     const contador = {};
